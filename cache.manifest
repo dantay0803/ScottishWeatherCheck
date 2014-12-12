@@ -1,0 +1,40 @@
+CACHE MANIFEST
+# 2014-04-23  Version 1.7
+
+# Explicitly cached files
+https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3_UE7HXLzonGTDTXIBK3EXUd4UewDvI
+css/customTheme/weatherApp.css
+css/customTheme/jquery.mobile.icons-1.4.3.min.css
+css/jquery.mobile.structure-1.4.3.min.css
+javascript/jquery-1.11.1.min.js
+javascript/jquery.mobile-1.4.3.min.js
+javascript/jgfeed.js
+javascript/index.js
+css/index.css
+index.html
+
+NETWORK:
+*
+
+# Additional files to cache
+CACHE:
+images/favicon.ico
+images/applicationLogo.png
+images/clearSky.png
+images/fog.png
+images/hail.gif
+images/haze.png
+images/heavyRain.gif
+images/heavySnow.gif
+images/lightCloud.gif
+images/lightRain.gif
+images/lightSnow.gif
+images/mist.png
+images/noData.png
+images/partlyCloudy.gif
+images/sleet.gif
+images/sunny.gif
+images/sunnyIntervals.gif
+images/thickCloud.gif
+images/thunder.gif
+images/tropicalStorm.gif

@@ -1,0 +1,69 @@
+#logo{
+    position: inherit;
+    text-align: center;
+    width: 100%;
+}
+#homeBody{
+    text-align: center;
+}
+#selecLocation{
+    text-align: center;
+}
+#weatherTitle{
+    text-align: center;
+	font-size: 35px;
+}
+#dayOneDate{
+    font-size: 30px;
+    text-decoration: underline;
+    text-align: center;
+}
+#dayOneForecastText{
+    font-size: 20px;
+    text-align: center;
+}
+#dayOneForecastImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#dayOneTemp{
+    font-size: 15px;
+    text-align: center;
+}
+#dayTwoDate{
+    font-size: 30px;
+    text-decoration: underline;
+    text-align: center;
+}
+#dayTwoForecastText{
+    font-size: 20px;
+    text-align: center;
+}
+#dayTwoForecastImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#dayTwoTemp{
+    font-size: 15px;
+    text-align: center;
+}
+#dayThreeDate{
+    font-size: 30px;
+    text-decoration: underline;
+    text-align: center;
+}
+#dayThreeForecastText{
+    font-size: 20px;
+    text-align: center;
+}
+#dayThreeForecastImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#dayThreeTemp{
+    font-size: 15px;
+    text-align: center;
+}

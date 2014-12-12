@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+    <title>Scottish Weather Check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"> 
+	
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3_UE7HXLzonGTDTXIBK3EXUd4UewDvI"></script>
+	
+    <link rel="stylesheet" href="css/customTheme/weatherApp.css">
+    <link rel="stylesheet" href="css/customTheme/jquery.mobile.icons-1.4.3.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css">
+    <script src="javascript/jquery-1.11.1.min.js"></script>
+    <script src="javascript/jquery.mobile-1.4.3.min.js"></script>
+    <script src="javascript/jgfeed.js"></script>
+    <script src="javascript/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+</head>
+<body>
+
+<!----------HomePage---------->
+<div id="homePage" data-role="page" data-theme="a">
+    <div data-role="header">
+        <div id="logo">
+            <img src="images/applicationLogo.png" alt="logo" style="width: 100%">
+        </div>
+    </div>
+    <div data-role="content" id="homeBody">
+        <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true"
+            data-filter-placeholder="Enter Location">
+            <li id="2657832" class="selectedLocation"><a href="#weather" data-transition="slide">Aberdeen</a></li>
+            <li id="Airdrie" class="selectedLocation"><a href="#weather" data-transition="slide">Airdrie</a></li>
+            <li id="Alloa"><a href="#weather" data-transition="slide">Alloa</a></li>
+            <li id="Arbroath"><a href="#weather" data-transition="slide">Arbroath</a></li>
+            <li id="Ayr"><a href="#weather" data-transition="slide">Ayr</a></li>
+            <li id="Barrhead"><a href="#weather" data-transition="slide">Barrhead</a></li>
+            <li id="Bathgate"><a href="#weather" data-transition="slide">Bathgate</a></li>
+            <li id="Bearsden"><a href="#weather" data-transition="slide">Bearsden</a></li>
+            <li id="Bellshill"><a href="#weather" data-transition="slide">Bellshill</a></li>
+            <li id="Bishopbriggs"><a href="#weather" data-transition="slide">Bishopbriggs</a></li>
+            <li id="Blantyre"><a href="#weather" data-transition="slide">Blantyre</a></li>
+            <li id="Broxburn"><a href="#weather" data-transition="slide">Broxburn</a></li>
+            <li id="BuckhavenAndMethil"><a href="#weather" data-transition="slide">Buckhaven & Methil</a></li>
+            <li id="Cambuslang"><a href="#weather" data-transition="slide">Cambuslang</a></li>
+            <li id="Clydebank"><a href="#weather" data-transition="slide">Clydebank</a></li>
+            <li id="Coatbridge"><a href="#weather" data-transition="slide">Coatbridge</a></li>
+            <li id="Cumbernauld"><a href="#weather" data-transition="slide">Cumbernauld</a></li>
+            <li id="Dumbarton"><a href="#weather" data-transition="slide">Dumbarton</a></li>
+            <li id="Dumfries"><a href="#weather" data-transition="slide">Dumfries</a></li>
+            <li id="Dundee"><a href="#weather" data-transition="slide">Dundee</a></li>
+            <li id="Dunfermline"><a href="#weather" data-transition="slide">Dunfermline</a></li>
+            <li id="EastKilbride"><a href="#weather" data-transition="slide">East Kilbride</a></li>
+            <li id="Edinburgh"><a href="#weather" data-transition="slide">Edinburgh</a></li>
+            <li id="Elgin"><a href="#weather" data-transition="slide">Elgin</a></li>
+            <li id="Erskine"><a href="#weather" data-transition="slide">Erskine</a></li>
+            <li id="Falkirk"><a href="#weather" data-transition="slide">Falkirk</a></li>
+            <li id="Glasgow"><a href="#weather" data-transition="slide">Glasgow</a></li>
+            <li id="Glenrothes"><a href="#weather" data-transition="slide">Glenrothes</a></li>
+            <li id="Grangemouth"><a href="#weather" data-transition="slide">Grangemouth</a></li>
+            <li id="Greenock"><a href="#weather" data-transition="slide">Greenock</a></li>
+            <li id="Hamilton"><a href="#weather" data-transition="slide">Hamilton</a></li>
+            <li id="Inverness"><a href="#weather" data-transition="slide">Inverness</a></li>
+            <li id="Irvine"><a href="#weather" data-transition="slide">Irvine</a></li>
+            <li id="Johnstone"><a href="#weather" data-transition="slide">Johnstone</a></li>
+            <li id="Kilmarnock"><a href="#weather" data-transition="slide">Kilmarnock</a></li>
+            <li id="Kilwinning"><a href="#weather" data-transition="slide">Kilwinning</a></li>
+            <li id="KirkcaldyAndDysart"><a href="#weather" data-transition="slide">Kirkcaldy & Dysart</a></li>
+            <li id="Kirkintilloch"><a href="#weather" data-transition="slide">Kirkintilloch</a></li>
+            <li id="Livingston"><a href="#weather" data-transition="slide">Livingston</a></li>
+            <li id="Motherwell"><a href="#weather" data-transition="slide">Motherwell</a></li>
+            <li id="Musselburgh"><a href="#weather" data-transition="slide">Musselburgh</a></li>
+            <li id="NewtonMearns"><a href="#weather" data-transition="slide">Newton Mearns</a></li>
+            <li id="Paisley"><a href="#weather" data-transition="slide">Paisley</a></li>
+            <li id="Penicuik"><a href="#weather" data-transition="slide">Penicuik</a></li>
+            <li id="Perth"><a href="#weather" data-transition="slide">Perth</a></li>
+            <li id="Peterhead"><a href="#weather" data-transition="slide">Peterhead</a></li>
+            <li id="Renfrew"><a href="#weather" data-transition="slide">Renfrew</a></li>
+            <li id="Rutherglen"><a href="#weather" data-transition="slide">Rutherglen</a></li>
+            <li id="StAndrews"><a href="#weather" data-transition="slide">St Andrews</a></li>
+            <li id="Stirling"><a href="#weather" data-transition="slide">Stirling</a></li>
+            <li id="Wishaw"><a href="#weather" data-transition="slide">Wishaw</a></li>
+        </ul>
+    </div>
+    <a href="#weather" id="geolocationButton" data-icon="location" data-role="button">Use my location</a>
+</div>
+
+<!----------DisplayPage---------->
+<div id="weather" data-role="page" data-theme="a">
+    <div data-role="header" data-add-back-btn="true" style="height: 50px;">
+        <div id="weatherTitle"></div>
+        <a href="#homePage" data-role="button" data-icon="home" id="homeButton" data-transition="slide" style="position: absolute; top: 50%;  margin-top: -1.2em;">Home</a>
+    </div>
+
+    <!----------StartDayOneContent---------->
+    <div id="dayOneDate"></div>
+    <br>
+
+    <div id="dayOneForecastText"></div>
+    <br>
+    <img id="dayOneForecastImage" src="images/noData.png" alt="Day one weather image"><br>
+
+    <div id="dayOneTemp"></div>
+    <br>
+    <!----------EndDayOneContent---------->
+
+    <!----------StartDayTwoContent---------->
+    <div id="dayTwoDate"></div>
+    <br>
+
+    <div id="dayTwoForecastText"></div>
+    <br>
+    <img id="dayTwoForecastImage" src="images/noData.png" alt="Day two weather image"><br>
+
+    <div id="dayTwoTemp"></div>
+    <br>
+    <!----------EndDayTwoContent---------->
+
+    <!----------StartDayThreeContent---------->
+    <div id="dayThreeDate"></div>
+    <br>
+
+    <div id="dayThreeForecastText"></div>
+    <br>
+    <img id="dayThreeForecastImage" src="images/noData.png" alt="Day three weather image"><br>
+
+    <div id="dayThreeTemp"></div>
+    <br>
+    <!----------EndDayThreeContent---------->
+</div>
+
+</body>
+</html>
