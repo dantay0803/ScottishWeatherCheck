@@ -29,8 +29,8 @@ $(document).ready(function () {
         $(".selectedLocation").bind('click', function () {
 			//GetIdOfSelectedLocation
             var locationCode = $(this).attr("id");
-			//GetRSSFeed
-			getFeed(locationCode);
+            //CreateRSSLink
+            createLink(locationCode);
 			//GetTextFromListItem
 			var locationName = $(this).text();
             //GetLocationName
@@ -79,7 +79,6 @@ function getFeed(url) {
                 for (var i = 0; i < feeds.entries.length; i++) {
                     var entry = feeds.entries[i];
                     var title = entry.title;
-
                     if (i == 0) {
                         titleArray[0] = title;
                     }
@@ -109,30 +108,11 @@ function showFeedDays() {
     dayElements[1] = $("#dayTwoDate");
     dayElements[2] = $("#dayThreeDate");
     //LoopThroughTheTitleArrayAndAssignTheDayNamesToEachDivElement
-    for (var i = 0; i < titleArray.length; i++) {
-        //CheckWhatDayIsInTheSting
-        if (titleArray[i].indexOf("Sunday") > -1) {
-            //WriteTheDayThatExistsInEachDivElement
-            dayElements[i].html("Sunday:");
-        }
-        if (titleArray[i].indexOf("Monday") > -1) {
-            dayElements[i].html("Monday:");
-        }
-        if (titleArray[i].indexOf("Tuesday") > -1) {
-            dayElements[i].html("Tuesday:");
-        }
-        if (titleArray[i].indexOf("Wednesday") > -1) {
-            dayElements[i].html("Wednesday:");
-        }
-        if (titleArray[i].indexOf("Thursday") > -1) {
-            dayElements[i].html("Thursday:");
-        }
-        if (titleArray[i].indexOf("Friday") > -1) {
-            dayElements[i].html("Friday:");
-        }
-        if (titleArray[i].indexOf("Saturday") > -1) {
-            dayElements[i].html("Saturday:");
-        }
+    for (var i = 0; i < titleArray.length; i++){
+		//CreateASubstringFromTheFirstPositionInTheArrayElementToThe:CharacterAtTheEndOfTheDayEntry
+		var daySubString = titleArray[i].substring(0, titleArray[i].indexOf(':'))
+		//AddTheSubstringToTheHTMLElementToDisplyTheDay
+		dayElements[i].html(daySubString);
     }
 }
 //DisplayTheForecastInTextAndImageFormat
@@ -149,96 +129,12 @@ function displayForecast() {
     forecastImageArray[2] = $("#dayThreeForecastImage");
     //GetForecastForTheThreeDays
     for (var i = 0; i < titleArray.length; i++) {
-        //CheckForClearSky
-        if (titleArray[i].indexOf("Clear Sky") >= 1) {
-            forecastTextArray[i].html("Clear Sky");
-            forecastImageArray[i].attr("src", "images/clearSky.png");
-        }
-        //CheckForSunny
-        if (titleArray[i].indexOf("Sunny") >= 1) {
-            forecastTextArray[i].html("Sunny");
-            forecastImageArray[i].attr("src", "images/sunny.gif");
-        }
-        //CheckForPartlyCloudy
-        if (titleArray[i].indexOf("Partly Cloudy") >= 1) {
-            forecastTextArray[i].html("Partly Cloudy");
-            forecastImageArray[i].attr("src", "images/partlyCloudy.gif");
-        }
-        //CheckForSunnyIntervals
-        if (titleArray[i].indexOf("Sunny Intervals") >= 1) {
-            forecastTextArray[i].html("Sunny Intervals");
-            forecastImageArray[i].attr("src", "images/sunnyIntervals.gif");
-        }
-        //CheckForLightCloud
-        if (titleArray[i].indexOf("Light Cloud") >= 1) {
-            forecastTextArray[i].html("Light Cloud");
-            forecastImageArray[i].attr("src", "images/lightCloud.gif");
-        }
-        //CheckForThickCloud
-        if (titleArray[i].indexOf("Thick Cloud") >= 1) {
-            forecastTextArray[i].html("Thick Cloud");
-            forecastImageArray[i].attr("src", "images/thickCloud.gif");
-        }
-        //CheckForDrizzle
-        if (titleArray[i].indexOf("Drizzle") >= 1) {
-            forecastTextArray[i].html("Drizzle");
-            forecastImageArray[i].attr("src", "images/lightRain.gif");
-        }
-        //CheckForLightRain
-        if (titleArray[i].indexOf("Light Rain") >= 1) {
-            forecastTextArray[i].html("Light Rain");
-            forecastImageArray[i].attr("src", "images/lightRain.gif");
-        }
-        //CheckForHeavyRain
-        if (titleArray[i].indexOf("Heavy Rain") >= 1) {
-            forecastTextArray[i].html("Heavy Rain");
-            forecastImageArray[i].attr("src", "images/heavyRain.gif");
-        }
-        //CheckForLightSnow
-        if (titleArray[i].indexOf("Light Snow") >= 1) {
-            forecastTextArray[i].html("Light Snow");
-            forecastImageArray[i].attr("src", "images/lightSnow.gif");
-        }
-        //CheckForHeavySnow
-        if (titleArray[i].indexOf("Heavy Snow") >= 1) {
-            forecastTextArray[i].html("Heavy Snow");
-            forecastImageArray[i].attr("src", "images/heavySnow.gif");
-        }
-        //CheckForThunder
-        if (titleArray[i].indexOf("Thunder") >= 1) {
-            forecastTextArray[i].html("Thunder");
-            forecastImageArray[i].attr("src", "images/thunder.gif");
-        }
-        //CheckForSleet
-        if (titleArray[i].indexOf("Sleet") >= 1) {
-            forecastTextArray[i].html("Sleet");
-            forecastImageArray[i].attr("src", "images/sleet.gif");
-        }
-        //CheckForHail
-        if (titleArray[i].indexOf("Hail") >= 1) {
-            forecastTextArray[i].html("Hail");
-            forecastImageArray[i].attr("src", "images/hail.gif");
-        }
-        //CheckForTropicalStorm
-        if (titleArray[i].indexOf("Tropical Storm") >= 1) {
-            forecastTextArray[i].html("Tropical Storm");
-            forecastImageArray[i].attr("src", "images/tropicalStorm.gif");
-        }
-        //CheckForHail
-        if (titleArray[i].indexOf("Fog") >= 1) {
-            forecastTextArray[i].html("Fog");
-            forecastImageArray[i].attr("src", "images/fog.png");
-        }
-        //CheckForHaze
-        if (titleArray[i].indexOf("Haze") >= 1) {
-            forecastTextArray[i].html("Haze");
-            forecastImageArray[i].attr("src", "images/haze.png");
-        }
-        //CheckForMist
-        if (titleArray[i].indexOf("Mist") >= 1) {
-            forecastTextArray[i].html("Mist");
-            forecastImageArray[i].attr("src", "images/mist.png");
-        }
+		//CreateASubstringAfterTheFirstEmptyPositionInTheDayEntryInTheArrayElementToThe,CharacterAtTheWeatherTypeEntry
+		var weatherSubString = titleArray[i].substring(titleArray[i].indexOf(' ') + 1, titleArray[i].indexOf(','))
+		//AddTheSubstringToTheHTMLElementToDisplyTheWeather
+		forecastTextArray[i].html(weatherSubString);
+		//AddTheWeatherTypeImages
+		forecastImageArray[i].attr("src", "images/" + weatherSubString + ".gif");
     }
 }
 //DisplayTemperature
@@ -342,14 +238,8 @@ function codeLatLng() {
             postCode = postCode.toString();
             postCode = postCode.toLowerCase();
             postCode = postCode.replace(/\s+/g, ' ');	
-            //PartOneOfBBCRSSFeedLink
-            var bbcStringStart = "http://open.live.bbc.co.uk/weather/feeds/en/";			
-            //PartThreeOfBBCRSSFeedLink
-            var bbcStringEnd = "/3dayforecast.rss";
-            //CombineStringForUrl
-            var feedURL = bbcStringStart.concat(postCode, bbcStringEnd);			
-            //SendUrlTojGFeed
-            getFeed(feedURL);	
+            //CreateRSSLinkWithPostCode
+            createLink(postCode);
 			//GetCityNameFromResult
             var locationName = results[0].address_components[1].short_name;		
             //DisplayCityName
@@ -381,4 +271,15 @@ function clearInfo() {
 	$("#dayOneTemp").html("");
 	$("#dayTwoTemp").html("");
 	$("#dayThreeTemp").html("");
+}
+//GetRSSLink
+function createLink(code){
+    //PartOneOfBBCRSSFeedLink
+    var bbcStringStart = "http://open.live.bbc.co.uk/weather/feeds/en/";
+    //PartThreeOfBBCRSSFeedLink
+    var bbcStringEnd = "/3dayforecast.rss";
+    //CombineStringForUrl
+    var feedURL = bbcStringStart.concat(code, bbcStringEnd);
+    //SendUrlTojGFeed
+    getFeed(feedURL);
 }
