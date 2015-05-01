@@ -149,11 +149,11 @@ function displayTemp() {
     //LoopThroughTheTitleArrayAndAssignTemperaturesToEachDivElement
     for (var i = 0; i < titleArray.length; i++) {
         //GetTheTemperatureForCurrentDay
-        if (titleArray[i].indexOf("Maximum") > -1) {
+        if(titleArray[i].indexOf("Maximum") > -1) {
             //IfMaximumExistsStartStringAtMaximum
             stringStart = titleArray[i].indexOf("Maximum");
         }
-        else {
+        else{
             //ElseStartStringAtMinimum
             stringStart = titleArray[i].indexOf("Minimum");
         }
